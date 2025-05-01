@@ -27,10 +27,19 @@
                 </li>
             </ul>
 
-            <div class="btn-container d-grid gap-2 d-md-block">
-                <a class="sign-up-btn" href="./signup.html">Sign Up</a>
-                <a class="btn-custom" type="button">Login</a>
-            </div>
+            @if (Auth::check())
+                echo 'đăng nhập thành công';
+                <div class="btn-container d-grid gap-2 d-md-block">
+                    <a class="sign-up-btn" href="{{ route('signup') }}">Sign Up</a>
+                     <a class="btn-custom" type="button" href="{{ route('auth.signin.show') }}">Login</a>
+              </div>
+            @else
+                <div class="btn-container d-grid gap-2 d-md-block">
+                      <a class="sign-up-btn" href="{{ route('signup') }}">Sign Up</a>
+                       <a class="btn-custom" type="button" href="{{ route('auth.signin.show') }}">Login</a>
+                </div>
+            @endif
+       
         </div>
     </nav>
 </div>
