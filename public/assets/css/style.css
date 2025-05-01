@@ -1,0 +1,46 @@
+.card {
+    margin: 0; /* Loại bỏ khoảng cách bên ngoài */
+    padding: 0; /* Loại bỏ khoảng cách bên trong */
+    margin-top : 10px;
+    border: none; 
+}
+.card-footer{
+    padding: 0.5rem 1rem;
+}
+.sub_container {
+    margin-left: 0; /* Đảm bảo nội dung sát vào bên trái */
+}
+h3, p {
+    margin-bottom: 1rem; /* Khoảng cách giữa tiêu đề và đoạn văn */
+}
+.col-lg-6, .col-lg-4 {
+    max-width: 500px; /* Giới hạn chiều rộng tối đa */
+}
+section .bg-light {
+    padding-left: 6rem; /* Lề trái */
+    padding-right: 6rem; /* Lề phải */
+}
+.sub_container p {
+    margin-bottom: 5rem; /* Khoảng cách dưới đoạn văn */
+}
+.top-banner {
+    background-color: #fca311;
+
+}
+.card-footer .d-flex{
+    background-color: #FCFCFD;
+}
+.main-container {
+    margin: auto;
+    gap: 80px; /* khoảng cách giữa hai cột */
+}
+
+.left-column {
+    flex: 3;
+    height: 500px;
+    
+}
+.right-column {
+    flex: 2;
+    background: white;
+}
