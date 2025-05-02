@@ -6,7 +6,7 @@
     <nav class="navbar navbar-expand">
         <div class="container-fluid mx-4">
             <a href="" class="navbar-brand">
-                <img src="./assets/img/logo.svg" alt="">
+                <img src="{{asset('assets/img/logo.svg')}}" alt="">
             </a>
 
             <ul class="navbar-nav me-auto">
@@ -28,14 +28,17 @@
             </ul>
 
             @if (Auth::check())
-                echo 'đăng nhập thành công';
+                @php
+                    $user = DB::table('users')->where('id', Auth::user()->id)->first();
+                    echo $user->name;
+                @endphp
                 <div class="btn-container d-grid gap-2 d-md-block">
-                    <a class="sign-up-btn" href="{{ route('signup') }}">Sign Up</a>
+                    <a class="sign-up-btn" href="{{ route('auth.signup.show') }}">Sign Up</a>
                      <a class="btn-custom" type="button" href="{{ route('auth.signin.show') }}">Login</a>
               </div>
             @else
                 <div class="btn-container d-grid gap-2 d-md-block">
-                      <a class="sign-up-btn" href="{{ route('signup') }}">Sign Up</a>
+                      <a class="sign-up-btn" href="{{ route('auth.signup.show') }}">Sign Up</a>
                        <a class="btn-custom" type="button" href="{{ route('auth.signin.show') }}">Login</a>
                 </div>
             @endif

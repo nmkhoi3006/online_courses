@@ -12,7 +12,8 @@
                     class="form-control" 
                     id="email" 
                     placeholder="Enter your Email"
-                    name="email">
+                    name="email"
+                    value="{{ old('email') }}">
                     @if ($errors->has('email'))
                         <span class="text-danger">{{ $errors->first('email') }}</span>
                     @endif
