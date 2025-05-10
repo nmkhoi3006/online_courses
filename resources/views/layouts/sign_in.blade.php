@@ -1,4 +1,4 @@
-<div class="right-column bg-light rounded">
+<div class="right-column bg-light rounded" >
     <form action="{{route('auth.signin')}}" method="post/get">
         @csrf
         <div class="card p-4">

@@ -43,6 +43,7 @@
                 </ul>
 
                 <div class="btn-container d-grid gap-2 d-md-block">
+                    <a class="cart-btn" href="./cart.html">Cart</a>
                     <a class="sign-up-btn" href="./signup.html">Sign Up</a>
                     <a class="btn-custom" type="button">Login</a>
                 </div>

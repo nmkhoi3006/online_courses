@@ -37,10 +37,10 @@
                                 responsive design principles. Develop the skills to create visually appealing and
                                 user-friendly websites.</div>
                         </div>
-
-                        <a href="./ui-ux.html" class="btn text-bg-light d-block" style="margin-top: 24px;">Get it
-                            Now</a>
-                    </div>
+                            <a href="./ui-ux.html" class="btn text-bg-light d-block flex-grow-1 me-2" style="margin-top: 24px;">Get it
+                                Now</a>
+                            <a class="btn-add-to-cart" href="#">Add</a>
+                        </div>
                 </div>
             </div>
 
