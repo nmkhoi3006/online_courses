@@ -43,10 +43,7 @@
                     </div>
                 </div>
     
-                <!-- Cột bên phải: Login -->
-
-                
-                    @include('layouts.sign_in')
+                @include('layouts.sign_in')
                 
             </div>
         </div>

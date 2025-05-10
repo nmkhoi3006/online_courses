@@ -4,8 +4,8 @@
     @include('layouts.head')
 </head>
 <body>
-    <!-- header -->
-   @include('layouts.sections.our_courses')
+
+   @include('sections.our_courses')
     <!-- footer -->
     @include('layouts.footer')
 </body>

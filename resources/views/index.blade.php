@@ -8,13 +8,13 @@
     @include('layouts.header')
 
     <!-- HERO SECTION -->
-    @include('layouts.sections.hero')
+    @include('sections.hero')
 
     <!-- BENEFIT SECTION -->
-    @include('layouts.sections.benefit')
+    @include('sections.benefit')
 
     <!-- Our Courses Section -->
-    @include('layouts.sections.our_courses')
+    @include('sections.our_courses')
 
     <!-- FOOTER -->
     @include('layouts.footer')

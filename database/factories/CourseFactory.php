@@ -17,7 +17,16 @@ class CourseFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'title' => fake()->sentence(5),
+            'author' => fake()->name(),   
+            'category' => fake()->randomElement(['programming', 'design', 'marketing']),
+            'duration' => fake()->numberBetween(1, 100),
+            'description' => fake()->paragraph(10),
+            'image' => fake()->imageUrl(640, 480, 'cats'),
+            'level' => fake()->randomElement(['beginner', 'intermediate', 'advanced']),
+            'price' => fake()->randomFloat(2, 10, 100), 
+            'created_at' => now(),
+            'updated_at' => now(),
         ];
     }
 }
