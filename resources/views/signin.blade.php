@@ -10,7 +10,7 @@
         <div class="container">
             <div class="d-flex justify-content-between container main-container">
                 <!-- Cột bên trái -->
-                <div class="left-column">
+                <div class="left-column me-3">
                     <div class="sub_container py-4">
                         <h3 class="fw-bold">Students Testimonials</h3>
                         <p class="text-muted">
@@ -44,7 +44,10 @@
                 </div>
     
                 <!-- Cột bên phải: Login -->
-                @include('layouts.sign_in')
+
+                
+                    @include('layouts.sign_in')
+                
             </div>
         </div>
     </section>

@@ -9,3 +9,18 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
+.sign-up-btn {
+    background-color: rgba(159, 26, 26, 0.8); /* Màu trắng đục */
+    color: #000; /* Màu chữ đen */
+    border: 1px solid #ddd; /* Đường viền mỏng */
+    border-radius: 50px; /* Bo tròn nút */
+    padding: 8px 20px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.sign-up-btn:hover {
+    background-color: rgba(255, 255, 255, 1); /* Màu trắng khi hover */
+    color: #333; /* Màu chữ đậm hơn khi hover */
+    text-decoration: none;
+}

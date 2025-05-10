@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CourseController;
 use Illuminate\Container\Attributes\Auth;
+use App\Http\Controllers\ListItem;
 
 Route::get('/', function () {
     return view('index');
@@ -15,9 +16,13 @@ Route::get('/signin/show', function(){
     return view('signin');
 })->name('auth.signin.show');
 
+
 Route::get('/signup/show', function(){
     return view('signup');
 })->name('auth.signup.show');
+
+
+Route::get('/cart', [ListItem::class, 'showCart'])->name('cart.show');
 
 Route::get('/signin', [AuthController::class, 'signin'])->name('auth.signin');
 

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+    
 @include('layouts.head')
 
 <body>
@@ -13,13 +13,10 @@
     <!-- BENEFIT SECTION -->
     @include('layouts.sections.benefit')
 
-
     <!-- Our Courses Section -->
     @include('layouts.sections.our_courses')
-
 
     <!-- FOOTER -->
     @include('layouts.footer')
 </body>
-
 </html>

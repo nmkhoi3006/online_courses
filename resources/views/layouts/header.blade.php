@@ -1,3 +1,4 @@
+
 <div class="container-fluid mt-3">
     <div class="top-banner text-center text-white rounded-1">
         <p class="py-2">Free Courses 🌟 Sale Ends Soon, Get It Now</p>
@@ -26,7 +27,9 @@
                     <a class="nav-link" href="#">Contact</a>
                 </li>
             </ul>
-
+            <div class="btn-container d-grid gap-2 d-md-block ms-auto">
+                <a class="btn btn-warning btn-sm rounded-pill px-4 py-2" href="{{ route('cart.show') }}">Cart 🛒</a>
+            </div>
             @if (Auth::check())
                 @php
                     $user = DB::table('users')->where('id', Auth::user()->id)->first();
@@ -42,6 +45,7 @@
                        <a class="btn-custom" type="button" href="{{ route('auth.signin.show') }}">Login</a>
                 </div>
             @endif
+
        
         </div>
     </nav>

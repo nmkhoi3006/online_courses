@@ -14,8 +14,6 @@ class AuthController extends Controller
     {
         
     }
-
-
     public function signup(StorePostRequest $request) {
         $validated = $request->validated();
         $user = DB::table('users')->insert([
@@ -45,7 +43,6 @@ class AuthController extends Controller
             return redirect()->route('homepage')
             ->with('success', 'You are signed in successfully');
         }
-        
         return redirect()->route('auth.signin.show')->with('error', 'Email or password is incorrect');
     }
 }
