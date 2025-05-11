@@ -16,7 +16,13 @@
     </div>
 
     <div class="container-fluid" style="margin-top: 50px;">
-        <div class="row mx-4" style="margin: 10px 0px;">
+        @yield('course_list')
+
+        {{-- <div class="row mx-4" style="margin: 10px 0px;">
+            @include('course.course_card')
+
+            @include('course.course_card')
+        {{-- <div class="row mx-4" style="margin: 10px 0px;">
             @include('course.course_card')
 
             @include('course.course_card')
@@ -32,6 +38,6 @@
             @include('course.course_card')
 
             @include('course.course_card')
-        </div>
+        </div> --}}
     </div>
 </section>

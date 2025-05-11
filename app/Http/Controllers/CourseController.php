@@ -3,15 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Course;
 
 class CourseController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('course.index');
+        $title = $request->input('title');
+        $courses = Course::when($title, function($query, $title){
+            return $query->title($title);
+        })->get();
+        return view('course.index', ['courses' => $courses]);
     }
 
     /**
@@ -35,7 +40,9 @@ class CourseController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return view('course.show', [
+            'course' => Course::findOrFail($id),
+        ]);
     }
 
     /**

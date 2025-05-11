@@ -8,7 +8,7 @@
     @include('layouts.header')
 
     <!-- description -->
-    @include('course.description')
+    @include('course.description', ['course' => $course])
 
     <!-- video -->
     <div class="video container-fluid">

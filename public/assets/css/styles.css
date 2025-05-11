@@ -1,19 +1,19 @@
-*{
+* {
     box-sizing: border-box;
 }
 
-html{
-    --primary-color: #FF9500;
-    background-color: #F7F7F8;
+html {
+    --primary-color: #ff9500;
+    background-color: #f7f7f8;
 }
 
-body{
+body {
     font-family: "Be Vietnam Pro", sans-serif;
-    background-color: #F7F7F8;
+    background-color: #f7f7f8;
 }
 
 /* COMMON */
-.btn-custom{
+.btn-custom {
     display: inline-block;
     background-color: var(--primary-color);
     color: white;
@@ -25,78 +25,78 @@ body{
     min-width: 86px;
 }
 
-.btn-custom:hover{
+.btn-custom:hover {
     opacity: 0.9;
 }
 
 /* begin header */
-.navbar .btn-container .sign-up-btn{
+.navbar .btn-container .sign-up-btn {
     text-decoration: none;
     color: #262626;
     margin-right: 30px;
 }
 /* end header */
 
-.top-banner{
+.top-banner {
     background-color: var(--primary-color);
 }
 
-.container .sub-container{
-    background-color: #FCFCFD;
+.container .sub-container {
+    background-color: #fcfcfd;
 }
 
-.heading{
+.heading {
     font-size: 2.5rem;
     line-height: 150%;
 }
 
-.paragraph{
+.paragraph {
     max-width: 933px;
     text-align: left;
-    color: #59595A;
+    color: #59595a;
 }
 
-.benefit .card-list .element{
-    background-color: #FFFFFF;
+.benefit .card-list .element {
+    background-color: #ffffff;
     min-height: 376px;
 }
 
-p{
+p {
     margin-bottom: 0px;
 }
 
-.btn-vector{
-    background-color: #FCFCFD;
+.btn-vector {
+    background-color: #fcfcfd;
     width: 54px;
     height: 54px;
     text-align: center;
-    padding-top: 15px
+    padding-top: 15px;
 }
 
 /* begin footer */
-.footer .description .nav-item{
+.footer .description .nav-item {
     padding: 4px 0px;
 }
 
-.footer .description .fw-semibold{
+.footer .description .fw-semibold {
     padding-bottom: 6px;
 }
 
-.footer .contact p{
+.footer .contact p {
     padding: 7px 0px;
 }
 
-.footer img{
+.footer img {
     padding-bottom: 24px;
 }
 /* end footer */
 
 /* begin courses open page */
-.video img{
+.video img {
     max-height: 649px;
 }
 
-.chapter-list{
+.chapter-list {
     padding: 100px 80px;
 }
 
@@ -105,47 +105,47 @@ p{
 }
 
 .chapter-list .chapter {
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     padding: 40px;
     border-radius: 10px;
 }
 
-.chapter-list .chapter .number{
+.chapter-list .chapter .number {
     font-size: 60px;
 }
 
-.chapter-list .chapter .title{
+.chapter-list .chapter .title {
     font-size: 20px;
     margin: 40px 0px;
 }
 
-.chapter-list .chapter .lesson-list .lesson{
+.chapter-list .chapter .lesson-list .lesson {
     border: 1px solid lightgray;
     border-radius: 6px;
     margin: 8px 0px;
 }
 
-.chapter-list .chapter .lesson-list .lesson .content{
+.chapter-list .chapter .lesson-list .lesson .content {
     padding: 20px 24px;
     align-items: center;
 }
 
-.chapter-list .chapter .lesson-list .lesson .content .time{
+.chapter-list .chapter .lesson-list .lesson .content .time {
     display: flex;
     align-items: center;
-    background-color: #F7F7F8;
+    background-color: #f7f7f8;
     border: 1px solid lightgray;
     border-radius: 8px;
     padding: 8px 12px;
     font-size: 14px;
-    color: #59595A;
+    color: #59595a;
     margin-left: auto;
 }
 
 .time i {
     margin-right: 8px;
     font-size: 16px;
-    color: #59595A;
+    color: #59595a;
 }
 /* end courses open page */
 
@@ -153,19 +153,21 @@ p{
 .card {
     margin: 0; /* Loại bỏ khoảng cách bên ngoài */
     padding: 0; /* Loại bỏ khoảng cách bên trong */
-    margin-top : 10px;
-    border: none; 
+    margin-top: 10px;
+    border: none;
 }
-.card-footer{
+.card-footer {
     padding: 0.5rem 1rem;
 }
 .sub_container {
     margin-left: 0; /* Đảm bảo nội dung sát vào bên trái */
 }
-h3, p {
+h3,
+p {
     margin-bottom: 1rem; /* Khoảng cách giữa tiêu đề và đoạn văn */
 }
-.col-lg-6, .col-lg-4 {
+.col-lg-6,
+.col-lg-4 {
     max-width: 500px; /* Giới hạn chiều rộng tối đa */
 }
 section .bg-light {
@@ -177,10 +179,9 @@ section .bg-light {
 }
 .top-banner {
     background-color: #fca311;
-
 }
-.card-footer .d-flex{
-    background-color: #FCFCFD;
+.card-footer .d-flex {
+    background-color: #fcfcfd;
 }
 .main-container {
     margin: auto;
@@ -190,10 +191,36 @@ section .bg-light {
 .left-column {
     flex: 3;
     height: 500px;
-    
 }
 .right-column {
     flex: 2;
     background: white;
 }
 /* end sign in */
+
+/*hero*/
+.course-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    text-decoration: none;
+    color: inherit;
+}
+
+.course-item:hover {
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+}
+
+.course-item img {
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.course-item:hover img {
+    transform: scale(1.05);
+}
