@@ -1,11 +1,16 @@
 <div class="d-flex justify-content-between align-items-center mb-4 filter-sort-section">
-    <!-- Filter Button -->
-    <div class="filter-button">
-        <button class="btn btn-outline-secondary">Filter</button>
-    </div>
-
     <!-- Search and Sort -->
-    <div class="d-flex align-items-center gap-2">
+    @php
+        $sorts = [
+            '' => 'Sort by',
+            'popular' => 'Most Popular',
+            'highest_rated' => 'Highest Rated',
+            'lowest_price' => 'Lowest Price',
+            'newest' => 'Newest',
+        ]
+    @endphp
+
+    <div class="d-flex align-items-center ms-auto gap-2">
         <!-- Search Form -->
         <form method="GET" action="{{ route('course.index') }}" class="d-flex align-items-center me-5">
             <input
@@ -16,18 +21,22 @@
                 class="form-control me-2"
                 style="height: 38px;"
             />
+            <input type="hidden" name="sort" value="{{ request('sort') }}" />
             <button type="submit" class="btn btn-outline-secondary">Search</button>
             <a href="{{ route('course.index') }}" class="btn btn-outline-secondary ms-2">Clear</a>
         </form>
 
         <!-- Sort Dropdown -->
-        <div class="sort-dropdown">
-            <select class="form-select" style="width: 200px; height: 38px;">
-                <option selected>Sort by</option>
-                <option value="1">Highest Rated</option>
-                <option value="2">Lowest Price</option>
-                <option value="3">Newest</option>
+        <form method="GET" action="{{ route('course.index') }}" class="d-flex align-items-center">
+            <input type="hidden" name="title" value="{{ request('title') }}" />
+            <select name="sort" class="form-select me-2" style="width: 200px; height: 38px;">
+                @foreach ($sorts as $key => $label)
+                    <option value="{{ $key }}" {{ request('sort') == $key ? 'selected' : '' }}>
+                        {{ $label }}
+                    </option>
+                @endforeach
             </select>
-        </div>
+            <button type="submit" class="btn btn-outline-secondary">Apply</button>
+        </form>
     </div>
 </div>

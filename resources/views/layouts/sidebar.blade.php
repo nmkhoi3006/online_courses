@@ -1,4 +1,9 @@
 <div class="col-md-3 sidebar">
+    <!-- Filter Button -->
+    <div class="filter-button pb-5">
+        <a class="btn btn-outline-secondary">Filter</a>
+    </div>
+
     <h5 class="sidebar-title">Ratings</h5>
     <div class="form-check rating-filter">
         <input

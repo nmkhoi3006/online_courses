@@ -13,9 +13,20 @@ class CourseController extends Controller
     public function index(Request $request)
     {
         $title = $request->input('title');
+        $sort = $request->input('sort');
+
         $courses = Course::when($title, function($query, $title){
             return $query->title($title);
-        })->get();
+        });
+ 
+        $courses = match($sort){
+            'highest_rated' => $courses->highestRating(),
+            'lowest_price' => $courses->lowestPrice(),
+            'newest' => $courses->latest(),
+            'popular' => $courses->popular(),
+            default => $courses->latest(),
+        };
+        $courses = $courses->get();
         return view('course.index', ['courses' => $courses]);
     }
 
