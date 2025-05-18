@@ -38,12 +38,21 @@ class CourseController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
-    {
-        return view('course.show', [
-            'course' => Course::findOrFail($id),
-        ]);
-    }
+    public function show()
+{
+    $cart = Cart::where('user_id', auth()->id())->with('items.course')->first();
+
+    // Lấy danh sách các khóa học trong giỏ hàng
+    $courses = $cart ? $cart->items->pluck('course') : collect();
+
+    return view('cart', compact('cart', 'courses'));
+}
+    // public function show(string $id)
+    // {
+    //     return view('course.show', [
+    //         'course' => Course::findOrFail($id),
+    //     ]);
+    // }
 
     /**
      * Show the form for editing the specified resource.

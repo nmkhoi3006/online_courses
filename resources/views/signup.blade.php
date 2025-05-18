@@ -8,29 +8,48 @@
   @include('layouts.header')
 
   <!-- Main Content -->
-  <div class="container my-5">
-    <div class="row g-4">
-      <!-- Testimonials -->
-      <div class="col-md-6">
-        <h3>Students Testimonials</h3>
-        <p>Lorem ipsum dolor sit amet consectetur. Tempus tincidunt etiam eget elit id imperdiet.</p>
-        <div class="bg-light p-3 rounded">
-          <p>The web design course provided a solid foundation for me. The instructors were knowledgeable and supportive...</p>
-          <div class="d-flex align-items-center">
-            <img src="https://via.placeholder.com/40" class="rounded-circle me-2" alt="avatar" />
-            <strong>Sarah L</strong>
-          </div>
-          <div class="mt-2 text-end">
-            <button class="btn btn-outline-secondary btn-sm">Read Full Story</button>
-          </div>
-        </div>
-      </div>
+  <section class="bg-light py-5">
+    <div class="container">
+        <div class="d-flex justify-content-between container main-container">
+            <!-- Cột bên trái -->
+            <div class="left-column me-3">
+                <div class="sub_container py-4">
+                    <h3 class="fw-bold">Students Testimonials</h3>
+                    <p class="text-muted">
+                        Lorem ipsum dolor sit amet consectetur. Tempus tincidunt etiam eget elit id imperdiet et. 
+                        Cras eu sit dignissim lorem nibh et. Ac cum eget habitasse in velit fringilla feugiat senectus in.
+                    </p>
+                    <div class="card rounded p-4  ">
+                        <p class="mt-5">The web design course provided a solid foundation for me. The instructors were knowledgeable 
+                            and supportive, and the interactive learning environment was engaging. I highly recommend it!
+                        </p>
+                        <!-- <hr class="my-3"> -->
+                        <div class="card-footer " style="background-color: #FCFCFD;"> 
+                            <div class="d-flex">
+                                <div class="d-flex align-items-center">
+                                    <img src="fc27e5b342678e8904c0f9f3ffdb8566.jpeg" alt="Sarah L" class=" me-3" width="50">
+                                    <p class="mb-0 fw-semibold">Sarah L</p>
+                                </div>
+                                <a href="#" class="btn btn-outline-primary btn-sm ms-auto">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-end mt-3">
+                        <button class="btn btn-outline-secondary">
+                            <i class="bi bi-arrow-left"><-</i>
+                        </button>
+                        <button class="btn btn-outline-secondary">
+                            <i class="bi bi-arrow-right">-></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
 
       <!-- Sign Up Form -->
-      <div class="col-md-6">
-        <div class="form-section">
-          <h3>Sign Up</h3>
-          <p>Create an account to unlock exclusive features.</p>
+      <div class="right-column bg-light rounded" style="max-width: 500px; margin: 0 auto;padding : 10px;">
+        <div class="card p-4">
+          <h3 class="fw-bold text-center">Sign Up</h3>
+          <p class="text-muted text-center">Create an account to unlock exclusive features.</p>
           <form action="{{ route('auth.signup') }}" method="post/get">
             @csrf
               <div class="mb-3">
@@ -83,6 +102,7 @@
       </div>
     </div>
   </div>
+  </section>
 
   <!-- Footer -->
   @include('layouts.footer')
