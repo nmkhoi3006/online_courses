@@ -45,4 +45,13 @@ class AuthController extends Controller
         }
         return redirect()->route('auth.signin.show')->with('error', 'Email or password is incorrect');
     }
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect()->route('homepage')
+        ->with('success', 'You are signed out successfully');
+    }
 }

@@ -1,4 +1,4 @@
-<div class="right-column bg-light rounded" >
+<div class="right-column bg-light rounded" style="max-width: 500px; margin: 0 auto;padding : 10px;">
     <form action="{{route('auth.signin')}}" method="post/get">
         @csrf
         <div class="card p-4">
@@ -19,7 +19,7 @@
                     @endif
                 </div>
                 <div class="mb-3">
-                    <label for="password" class="form-label">Password</label>
+                    <label for="password" class="form-label" >Password</label>
                     <div class="input-group">
                         <input 
                         type="password" 

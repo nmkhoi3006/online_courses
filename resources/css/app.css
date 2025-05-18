@@ -25,3 +25,7 @@
     color: #333; /* Màu chữ đậm hơn khi hover */
     text-decoration: none;
 }
+.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0; /* Đảm bảo dropdown không bị lệch */
+}

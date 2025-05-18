@@ -27,5 +27,10 @@
         <p class="course-price">
             <strong>{{ $course->price }}</strong> 
         </p>
+        <form action="{{ route('cart.add', $course->id) }}" method="POST" class="mt-3">
+            @csrf
+            <input type="hidden" name="course_id" value="{{ $course->id }}">
+            <button type="submit" class="btn btn-warning">Add to Cart</button>
+        </form>
     </div>
 </a>
