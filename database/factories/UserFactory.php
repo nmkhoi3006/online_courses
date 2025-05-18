@@ -26,6 +26,7 @@ class UserFactory extends Factory
         return [
             'name' => fake()->unique()->name(),
             'email' => fake()->unique()->userName() . '@gmail.com',
+            'role' => 'user',
             'password' => Hash::make("123"),
         ];
     }
@@ -37,6 +38,22 @@ class UserFactory extends Factory
     {
         return $this->state(fn (array $attributes) => [
             'email_verified_at' => null,
+        ]);
+    }
+
+     /** State: admin */
+    public function admin()
+    {
+        return $this->state(fn(array $attrs) => [
+            'role' => 'admin',
+        ]);
+    }
+
+    /** State: người dùng thường */
+    public function user()
+    {
+        return $this->state(fn(array $attrs) => [
+            'role' => 'user',
         ]);
     }
 }

@@ -224,3 +224,35 @@ section .bg-light {
 .course-item:hover img {
     transform: scale(1.05);
 }
+
+/* begin pagination */
+.pagination .page-item .page-link {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6f42c1; /* Màu tím */
+    border: 1px solid #6f42c1;
+    margin: 0 5px;
+    transition: all 0.3s ease;
+}
+
+.pagination .page-item .page-link:hover {
+    background-color: #6f42c1;
+    color: #fff;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #6f42c1;
+    color: #fff;
+    border-color: #6f42c1;
+}
+
+.pagination .page-item.disabled .page-link {
+    color: #6f42c1;
+    border-color: #ddd;
+    pointer-events: none;
+}
+/* end pagination */

@@ -1,15 +1,18 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CourseController;
 use Illuminate\Container\Attributes\Auth;
 use App\Http\Controllers\ListItem;
+use App\Http\Middleware\AdminMiddleware;
 
 Route::get('/', function () {
     return view('index');
 })->name('homepage');
+
 
 
 Route::get('/signin/show', function(){
@@ -29,4 +32,8 @@ Route::get('/signin', [AuthController::class, 'signin'])->name('auth.signin');
 Route::get('/signup', [AuthController::class, 'signup'])->name('auth.signup');
 
 Route::resource('course', CourseController::class);
+
+Route::resource('admin', AdminController::class)->middleware([AdminMiddleware::class . ':admin'])->only([
+    'index'
+]);
 

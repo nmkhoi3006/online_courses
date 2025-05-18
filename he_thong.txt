@@ -1,0 +1,79 @@
+1. Dashboard tổng quan
+    Thống kê nhanh:
+
+    Tổng số khóa học, học viên, giảng viên đang hoạt động
+
+    Doanh thu theo ngày/tuần/tháng/quý
+
+    Biểu đồ tăng trưởng: số đăng ký mới, doanh thu, tỉ lệ hoàn thành khóa học
+
+    Thông báo hệ thống: nhắc nợ hạn thanh toán, cập nhật bản backup, cảnh báo lỗi…
+
+2. Quản lý Khóa học
+    CRUD khóa học: tạo/sửa/xóa, phân quyền xem chỉnh sửa
+
+    Quản lý nội dung:
+
+    Chương/ bài học (upload video, file tài liệu, quiz, bài tập)
+
+    Sắp xếp thứ tự, ẩn/hiện bài học
+
+    Chuyên mục & thẻ: thêm/xóa/sửa danh mục, gán tag, bộ lọc theo chủ đề
+
+3. Quản lý Người dùng
+    Học viên:
+
+    Danh sách, tìm kiếm, lọc (theo trạng thái kích hoạt, đã thanh toán, đang học…)
+
+    Chi tiết hồ sơ, lịch sử mua khóa, tiến độ học tập
+
+    Giảng viên:
+
+    Xét duyệt hồ sơ làm giảng viên
+
+    Phê duyệt/ từ chối khóa mới, theo dõi doanh thu chia sẻ
+
+    Phân quyền & vai trò: tạo vai trò (admin, moderator, support), gán quyền cụ thể cho từng module
+
+4. Quản lý Đơn hàng & Thanh toán
+    Đơn hàng: xem chi tiết, trạng thái (đã thanh toán, đang chờ, hoàn tiền), xử lý hoàn tiền
+
+    Hóa đơn/ biên lai: sinh PDF, gửi email tự động
+
+    Cấu hình cổng thanh toán: PayPal, Stripe, VNPay, Momo…; thiết lập tỉ lệ chia % cho giảng viên
+
+    5. Mã khuyến mãi & Chiến dịch Marketing
+    Coupon/Discount: tạo mã, đặt điều kiện (giảm %, giảm tiền cố định, giới hạn số lần sử dụng, ngày hết hạn)
+
+    Email Marketing:
+
+    Gửi newsletter cho nhóm học viên (theo tag, theo khóa đã mua)
+
+    Templates email (Bootstrap 5 compatible)
+
+6. Nội dung & Tương tác
+    Quản lý bình luận & đánh giá: duyệt/ẩn review, phản hồi học viên
+
+    Hỏi đáp (Q&A): duyệt câu hỏi, chuyển escalated lên giảng viên
+
+    Thông báo (Notification): push notification/dashboard alert khi có hoạt động mới
+
+7. Báo cáo & Analytics
+    Báo cáo chi tiết: doanh thu theo giảng viên, theo khóa, theo thời gian
+
+    Học viên: tỉ lệ hoàn thành, điểm quiz, thời gian học trung bình
+
+    Export: xuất CSV/XLS các báo cáo tùy chọn
+
+8. Hỗ trợ & Hệ thống
+    Hệ thống ticket: theo dõi yêu cầu hỗ trợ của người dùng, phân công nhân viên support
+
+    Cấu hình site: logo, favicon, thông tin liên hệ, SEO (meta title/description)
+
+    Backup & Logs:
+
+    Lịch backup database/upload tự động
+
+    Xem log lỗi (Laravel logs), audit trail (ai đã chỉnh gì, khi nào)
+
+    Maintenance Mode: bật/tắt bảo trì

@@ -15,18 +15,23 @@ class CourseController extends Controller
         $title = $request->input('title');
         $sort = $request->input('sort');
 
-        $courses = Course::when($title, function($query, $title){
+        $courses = Course::when($title, function($query, $title) {
             return $query->title($title);
         });
- 
-        $courses = match($sort){
+
+        $courses = match($sort) {
             'highest_rated' => $courses->highestRating(),
             'lowest_price' => $courses->lowestPrice(),
             'newest' => $courses->latest(),
             'popular' => $courses->popular(),
             default => $courses->latest(),
         };
-        $courses = $courses->get();
+
+        $courses = $courses->paginate(7)->appends([
+            'title' => $title,
+            'sort' => $sort,
+        ]);
+
         return view('course.index', ['courses' => $courses]);
     }
 
