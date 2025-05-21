@@ -2,16 +2,34 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the resource.   
      */
     public function index()
-    {
-        return view('admin.index');
+    {   
+        $user = Auth::user();
+        $courses = $user->coursesCreated;
+        $all_buyers = [];
+        foreach ($courses as $course){
+            $buyers = $course->buyers;
+            $all_buyers = array_merge($all_buyers, $buyers->toArray());
+        }
+
+
+        $manager_in4 = [
+            'buyers' => $all_buyers,
+            'courses' => $courses,
+        ];
+
+        return view('admin.index', [
+            'manager_in4' => $manager_in4,
+        ]);
     }
 
     /**

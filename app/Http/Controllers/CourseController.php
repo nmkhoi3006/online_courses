@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Course;
+use App\Models\Cart;
 
 class CourseController extends Controller
 {
@@ -55,14 +56,14 @@ class CourseController extends Controller
      * Display the specified resource.
      */
     public function show()
-{
-    $cart = Cart::where('user_id', auth()->id())->with('items.course')->first();
+    {
+        $cart = Cart::where('user_id', auth()->id())->with('items.course')->first();
 
-    // Lấy danh sách các khóa học trong giỏ hàng
-    $courses = $cart ? $cart->items->pluck('course') : collect();
+        // Lấy danh sách các khóa học trong giỏ hàng
+        $courses = $cart ? $cart->items->pluck('course') : collect();
 
-    return view('cart', compact('cart', 'courses'));
-}
+        return view('cart', compact('cart', 'courses'));
+    }
     // public function show(string $id)
     // {
     //     return view('course.show', [

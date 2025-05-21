@@ -5,6 +5,7 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
@@ -15,6 +16,25 @@ class User extends Authenticatable
     public function reviews()
     {
         return $this->hasMany(Review::class);
+    }
+
+    public function coursesCreated()
+    {
+        return $this->hasMany(Course::class, 'admin_id');
+    }
+
+    public function purchasedCourses() {
+        return $this->belongsToMany(
+            Course::class,    
+            'courses_user',   
+            'user_id',       
+            'course_id'     
+        ) ->withPivot('purchased_at','price_paid');
+    }
+
+    public function scopeCountCoursesPurchased(Builder $query) {
+        return $query->withCount('purchasedCourses')
+            ->orderBy('purchased_courses_count', 'desc');
     }
 
     /**

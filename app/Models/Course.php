@@ -15,6 +15,18 @@ class Course extends Model
         return $this->hasMany(Review::class);
     }
 
+    public function admin(){
+        return $this->belongsTo(User::class);
+    }
+
+    public function buyers() {
+        return $this->belongsToMany(
+            User::class,
+            'courses_user',
+            'course_id','user_id'
+        )->withPivot('purchased_at','price_paid');
+    }
+
     public function scopeTitle(Builder $query, string $title)
     {
         return $query->where('title', 'like', "%$title%");

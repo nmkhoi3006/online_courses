@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('courses', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('admin_id')->unsigned();
             $table->string('title');
             $table->string('author');
             $table->string('category');
@@ -21,6 +22,7 @@ return new class extends Migration
             $table->string('level');
             $table->decimal('price', 8, 2);
             $table->integer('duration');
+            $table->foreign('admin_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
