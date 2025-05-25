@@ -46,6 +46,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'balance',
     ];
 
     /**
@@ -74,4 +75,13 @@ class User extends Authenticatable
     {
         return $this->hasOne(Cart::class);
     }
+    public function courseOfUser()
+    {
+        return $this->hasMany(CourseOfUser::class);
+    }
+    public function courses()
+    {
+        return $this->belongsToMany(Course::class, 'courses_of_user', 'user_id', 'course_id');
+    }
+
 }

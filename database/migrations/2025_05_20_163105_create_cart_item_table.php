@@ -11,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('cart_items', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('cart_id'); // ID của giỏ hàng
-            $table->unsignedBigInteger('course_id'); // ID của khóa học
+        Schema::create('cart_item', function (Blueprint $table) {
+            $table->unsignedBigInteger('cart_id');
+            $table->unsignedBigInteger('course_id');
             $table->timestamps();
-            
-            //khoá ngoại
+        
+            $table->primary(['cart_id', 'course_id']);
+        
             $table->foreign('cart_id')->references('id')->on('carts')->onDelete('cascade');
             $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
         });
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('cart_items');
+        Schema::dropIfExists('cart_item');
     }
 };

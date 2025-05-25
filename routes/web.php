@@ -27,7 +27,7 @@ Route::get('/signup/show', function(){
 })->name('auth.signup.show');
 
 
-Route::get('/profile', [ProfileController::class, 'show'])->middleware('auth')->name('auth.profile.show');
+Route::get('/user/profile', [ProfileController::class, 'show'])->middleware('auth')->name('auth.user.profile.show');
 
 Route::get('/cart', [CartController::class, 'show'])->name('cart.show');
 
@@ -44,3 +44,10 @@ Route::resource('admin', AdminController::class)->middleware([AdminMiddleware::c
 ]);
 Route::post('/cart/add/{id}', [CartController::class, 'add'])->middleware('auth')->name('cart.add');
 
+Route::delete('/cart/remove/{course_id}', [CartController::class, 'remove'])->middleware('auth')->name('cart.remove');
+
+Route::get('/cart/checkout', [CartController::class, 'checkout'])->middleware('auth')->name('cart.checkout');
+
+Route::get('/user/courses', [UserController::class, 'showYourCourses'])->name('auth.user.courses');
+
+Route::post('/course/buynow/{id}', [CartController::class, 'buynow'])->middleware('auth')->name('course.buynow');

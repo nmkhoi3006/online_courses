@@ -27,10 +27,19 @@
         <p class="course-price">
             <strong>{{ $course->price }}</strong> 
         </p>
-        <form action="{{ route('cart.add', $course->id) }}" method="POST" class="mt-3">
-            @csrf
-            <input type="hidden" name="course_id" value="{{ $course->id }}">
-            <button type="submit" class="btn btn-warning">Add to Cart</button>
-        </form>
+        <div class="mt-3">
+            {{-- add to cart --}}
+            <form action="{{ route('cart.add', $course->id) }}" method="POST" class="d-inline">
+                @csrf
+                <input type="hidden" name="course_id" value="{{ $course->id }}">
+                <button type="submit" class="btn btn-warning">Add to Cart</button>
+            </form>
+            {{-- buy  --}}
+            <form action="{{ route('course.buynow', $course->id) }}" method="POST" class="d-inline">
+                @csrf
+                <input type="hidden" name="course_id" value="{{ $course->id }}">
+                <button type="submit" class="btn btn-warning">Buy Now</button>
+            </form>
+        </div>
     </div>
 </a>

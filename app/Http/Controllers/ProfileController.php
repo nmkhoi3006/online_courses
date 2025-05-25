@@ -9,7 +9,7 @@ class ProfileController extends Controller
     {
         // Trả về view profile
         $user = auth()->user();
-        return view('profile', compact('user'));
+        return view('user.profile', compact('user'));
     }
 
     public function edit()

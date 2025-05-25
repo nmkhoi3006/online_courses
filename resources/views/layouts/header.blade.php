@@ -15,7 +15,9 @@
     justify-content: center;
     overflow: hidden; /* Đảm bảo hình ảnh không bị tràn */
     cursor: pointer; /* Thêm con trỏ chuột khi hover */
+    margin-right: 30px;
 }
+
 
 .btn-circle img {
     width: 100%; /* Hình ảnh chiếm toàn bộ nút */
@@ -64,9 +66,26 @@
             @if (Auth::check())
                 @php
                     $user = DB::table('users')->where('id', Auth::user()->id)->first();
+                    $cartCount = 0;
+                    if (Auth::check()) {
+                        $cart = DB::table('carts')->where('user_id', Auth::id())->first();
+
+                    if ($cart) {
+                        $cartCount = DB::table('cart_item')->where('cart_id', $cart->id)->count();
+                    }
+                }
                 @endphp
                 <div class="d-flex align-items-center ">
-                <a class="btn btn-warning btn-sm rounded-pill px-4 py-2 ms-4" style="margin-left: 0;" href="{{ route('cart.show') }}">Cart 🛒</a>
+                
+                <a class="btn btn-warning btn-sm rounded-pill px-4 py-2 ms-4 position-relative" style="margin-left: 0;" href="{{ route('cart.show') }}">
+                    🛒
+                    @if ($cartCount > 0)
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            {{ $cartCount }}
+                            <span class="visually-hidden">items in cart</span>
+                        </span>
+                    @endif
+                </a>
 
                 <div class="dropdown ms-3">
                     <button class="btn btn-circle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
@@ -74,13 +93,13 @@
                     </button>
                     
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <li><a class="dropdown-item" href="{{ route('auth.profile.show') }}">Profile</a></li>
+                        <li>
+                            <a class="dropdown-item" href="{{ route('auth.user.profile.show') }}">Profile</a></li>
                         <li>
                             <a href="{{ route('logout') }}" class="dropdown-item">Logout</a>
-                            {{-- <form action="{{ route('logout') }}" method="GET">
-                                @csrf
-                                <button type="submit" class="btn btn-link">Logout</button>
-                            </form> --}}
+                        </li>
+                        <li>
+                            <a href="{{ route('auth.user.courses') }}" class="dropdown-item">Your Courses</a>
                         </li>
                     </ul>
                 </div>
