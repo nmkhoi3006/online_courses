@@ -55,6 +55,7 @@ class CourseController extends Controller
     /**
      * Display the specified resource.
      */
+<<<<<<< HEAD
     public function show()
     {
         $cart = Cart::where('user_id', auth()->id)->with('items.course')->first();
@@ -70,6 +71,14 @@ class CourseController extends Controller
     //         'course' => Course::findOrFail($id),
     //     ]);
     // }
+=======
+    public function show(string $id)
+    {
+        return view('course.show', [
+            'course' => Course::findOrFail($id),
+        ]);
+    }
+>>>>>>> b632c07 (code mới)
 
     /**
      * Show the form for editing the specified resource.

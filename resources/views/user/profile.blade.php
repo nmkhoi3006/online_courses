@@ -11,9 +11,7 @@
             <tr>
                 <th style="width: 30%; padding: 8px;">Name</th>
                 <td style="width: 70%; padding: 8px;">{{ $user->name }}</td>
-            </tr>No	Course name	Lecturer	Price	Action
-            1	Khóa học Laravel	Nguyễn Văn A	500.000 VND	
-            2	Khóa học ReactJS	Trần Thị B	700.000 VND
+            </tr>
             <tr>
                 <th style="width: 30%; padding: 8px;">Email</th>
                 <td style="width: 70%; padding: 8px;">{{ $user->email }}</td>
