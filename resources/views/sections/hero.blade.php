@@ -2,7 +2,7 @@
 <section class="hero">
     <div class="container">
         <div class="sub-container row mx-auto" style="max-width: 643px;">
-            <div class="col-12 text-center d-flex" style="align-items: center;">
+            <div class="col-12 text-center">
                 <img class="mb-3 pt-2" src="./assets/img/icon.svg" alt="">
                 <p class="fw-semibold fs-2 d-inline-block"><span style="color: #FF9500;">Unlock </span>Your Creative
                     Potential</p>

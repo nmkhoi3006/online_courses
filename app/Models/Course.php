@@ -31,6 +31,11 @@ class Course extends Model
     {
         return $query->where('title', 'like', "%$title%");
     }
+    
+    public function scopeAvgRating(Builder $query)
+    {
+        return $query->withAvg('reviews', 'rating');
+    }
 
     public function scopePopular(Builder $query)
     {

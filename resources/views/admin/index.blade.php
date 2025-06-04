@@ -43,7 +43,7 @@
                     <ul class="nav navbar-top-links navbar-right">
 
                         <li>
-                            <a href="login.html">
+                            <a href="{{ route('homepage') }}">
                                 <i class="fa fa-sign-out"></i> Log out
                             </a>
                         </li>
@@ -53,14 +53,11 @@
             </div>
             <div class="row wrapper border-bottom white-bg page-heading">
                 <div class="col-lg-10">
-                    <h2>Manger Students and Course</h2>
-                </div>
-                <div class="col-lg-2">
-
+                    <h2>Manager Students and Course</h2>
                 </div>
             </div>
 
-            @include('templates.client_list', ['manager_in4' => $manager_in4])
+            @include('templates.client_list', ['adminResources' => $adminResources])
 
         </div>
     </div>

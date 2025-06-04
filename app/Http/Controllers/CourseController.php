@@ -57,7 +57,7 @@ class CourseController extends Controller
      */
     public function show()
     {
-        $cart = Cart::where('user_id', auth()->id())->with('items.course')->first();
+        $cart = Cart::where('user_id', auth()->id)->with('items.course')->first();
 
         // Lấy danh sách các khóa học trong giỏ hàng
         $courses = $cart ? $cart->items->pluck('course') : collect();

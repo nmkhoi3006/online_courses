@@ -15,20 +15,20 @@ class AdminController extends Controller
     {   
         $user = Auth::user();
         $courses = $user->coursesCreated;
-        $all_buyers = [];
+        $buyersByCourse = [];
         foreach ($courses as $course){
-            $buyers = $course->buyers;
-            $all_buyers = array_merge($all_buyers, $buyers->toArray());
+            $buyersByCourse[$course->id] = $course->buyers;
         }
 
 
-        $manager_in4 = [
-            'buyers' => $all_buyers,
+        $adminResources = [
+            'buyersByCourse' => $buyersByCourse,
             'courses' => $courses,
         ];
+        // dd($adminResources);
 
         return view('admin.index', [
-            'manager_in4' => $manager_in4,
+            'adminResources' => $adminResources,
         ]);
     }
 
